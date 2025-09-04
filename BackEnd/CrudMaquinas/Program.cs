@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using CrudMaquinas.Context;
+using CrudMaquinas.Repositories;
 
 namespace CrudMaquinas
 {
@@ -18,7 +19,9 @@ namespace CrudMaquinas
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DeafultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<MachineRepository, MachineRepository>();
 
             var app = builder.Build();
 
