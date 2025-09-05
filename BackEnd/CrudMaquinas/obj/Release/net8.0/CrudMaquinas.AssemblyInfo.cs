@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudMaquinas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f9a66b8aaba3095e8b86eb9b24c8668f851ade3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudMaquinas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudMaquinas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

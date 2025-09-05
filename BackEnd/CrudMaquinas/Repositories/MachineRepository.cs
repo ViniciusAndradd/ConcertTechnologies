@@ -11,14 +11,10 @@ namespace CrudMaquinas.Repositories
         {
             _context = context;
         }
-        public Task CreateMachine(Machine machine)
+        public async Task CreateMachine(Machine machine)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteMachine(Machine machine)
-        {
-            throw new NotImplementedException();
+            _context.Machines.Add(machine);
+            _context.SaveChanges();
         }
 
         public async Task<IEnumerable<Machine>> GetAllMachines()
@@ -33,14 +29,39 @@ namespace CrudMaquinas.Repositories
                         }).ToListAsync();
         }
 
-        public Task GetMachinesByStatus(string status)
+        public async Task<Machine> GetMachineById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Machines
+                                 .FirstOrDefaultAsync(machine => machine.Id == id);
         }
 
-        public Task UpdateMachine(Machine machine)
+        public async Task<IEnumerable<Machine>> GetMachinesByStatus(string status)
         {
-            throw new NotImplementedException();
+            return await _context.Machines
+                        .Where(machine => machine.Status == status)
+                        .Select(machine => new Machine
+                        {
+                            Id = machine.Id,
+                            Name = machine.Name,
+                            Location = machine.Location,
+                            Status = machine.Status,
+                        }).ToListAsync();
+        }
+
+        public async Task UpdateMachine(Machine machine)
+        {
+            _context.Machines.Update(machine);
+            _context.SaveChanges();
+        }
+
+        public async Task DeleteMachine(int id)
+        {
+            var machine = await GetMachineById(id);
+            if (machine != null)
+            {
+                _context.Machines.Remove(machine);
+                _context.SaveChanges();
+            }
         }
     }
 }
