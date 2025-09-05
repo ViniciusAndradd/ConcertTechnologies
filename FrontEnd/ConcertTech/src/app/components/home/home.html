@@ -1,0 +1,66 @@
+<main>
+    <div class="container">
+        <div class="dashboard">
+            <p>Aqui ficará o dashboard</p>
+        </div>
+        <div class="acoes">
+            <div class="row">
+                <div class="cadastrarMaquina">
+                    <button class="btnCadastrar btn btn-primary col-12" (click)="CadastrarMaquina">Cadastrar Máquina</button>
+                </div>
+                <div class="filtro">
+                    <form action="">
+                        <select class="form-select" name="filtro" id="filtro">
+                            <option value="" selected></option>
+                            <option value="Operando">Operando</option>
+                            <option value="Parada para manutenção">Parada para manutenção</option>
+                            <option value="Desativada">Desativada</option>
+                        </select>
+                        <button class="btnFiltro btn btn-primary">Filtrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="listagem">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Localização</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Máquina 1</td>
+                        <td>Contagem</td>
+                        <td>Operando</td>
+                        <td>
+                            <button class="btnEditar btn btn-primary">Editar</button>
+                            <button class="btnExcluir btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Máquina 2</td>
+                        <td>Contagem</td>
+                        <td>Parada para manutenção</td>
+                        <td>
+                            <button class="btnEditar btn btn-primary">Editar</button>
+                            <button class="btnExcluir btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Máquina 3</td>
+                        <td>Belo Horizonte</td>
+                        <td>Desativada</td>
+                        <td>
+                            <button class="btnEditar btn btn-primary">Editar</button>
+                            <button class="btnExcluir btn btn-danger">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
